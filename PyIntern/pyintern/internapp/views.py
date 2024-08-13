@@ -1,8 +1,15 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, FileResponse
 from .forms import InputForm
 from . import main
 
+
+def last_file_f():
+    directory = '//conent'
+    files = os.listdir(directory)
+    files = [os.path.join(directory, f) for f in files]
+    latest_file = max(files, key=os.path.getmtime)
+    return latest_file
 
 def index(request):
     if request.method == 'POST':
@@ -11,7 +18,7 @@ def index(request):
             user_input = form.cleaned_data['user_input']
                 # Обработка данных, введенных пользователем
             result = process_user_input(user_input)
-            return HttpResponse(f'Processed input: {result}')
+            return FileResponse(open('{filen}'.format(filen = last_file_f()), 'r+b'), as_attachment=True, filename='vid.mp4')
     else:
         form = InputForm()
 
@@ -21,5 +28,5 @@ def process_user_input(input_data):
     main.f = input_data
     o_vid = main.RunningText()
     o_vid.construct()
-    main.db.input_psql(main.f)
+    #main.db.input_psql(main.f)
     return input_data.upper()
