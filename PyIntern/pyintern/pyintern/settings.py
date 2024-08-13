@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-dv)fcd108n0$x&&n62@(fi&1psx5!elmb*nop^oap&=e!al0pj
 DEBUG = True
 
 
-ALLOWED_HOSTS = [http://*ngrock_public_url, localhost]
+ALLOWED_HOSTS = ['http://*ngrock_public_url', localhost]
 
 
 # Application definition
