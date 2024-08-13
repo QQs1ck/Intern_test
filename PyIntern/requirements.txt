@@ -1,1 +1,4 @@
-manim psycopg2 django pyngrok
+manim
+psycopg2
+django
+pyngrok
