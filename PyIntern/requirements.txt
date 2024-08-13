@@ -1,0 +1,1 @@
+manim psycopg2 django pyngrok
