@@ -1,5 +1,8 @@
 from pathlib import Path
 
+#paste ngrok public url
+url = ''
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -14,9 +17,9 @@ SECRET_KEY = 'django-insecure-dv)fcd108n0$x&&n62@(fi&1psx5!elmb*nop^oap&=e!al0pj
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['http://*ngrock_public_url', 'localhost']
+ALLOWED_HOSTS = [url, 'localhost']
 CSRF_TRUSTED_ORIGINS = [
-    'http://ngrock_public_url'
+    f'http://{url}'.format(url = url)
 ]
 
 
