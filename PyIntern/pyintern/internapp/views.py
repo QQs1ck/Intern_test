@@ -18,7 +18,7 @@ def index(request):
             user_input = form.cleaned_data['user_input']
                 # Обработка данных, введенных пользователем
             result = process_user_input(user_input)
-            return FileResponse(open('{filen}'.format(filen = last_file_f()), 'r+b'), as_attachment=True, filename='vid.mp4')
+            return FileResponse(open(last_file_f(), 'r+b'), as_attachment=True, filename='vid.mp4')
     else:
         form = InputForm()
 
