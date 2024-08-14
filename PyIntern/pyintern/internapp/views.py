@@ -6,7 +6,7 @@ import os
 
 
 def last_file_f():
-    directory = '//conent'
+    directory = '//content/testproject/PyIntern/pyintern/media/videos/1080p60/partial_movie_files/RunningText'
     files = os.listdir(directory)
     files = [os.path.join(directory, f) for f in files]
     latest_file = max(files, key=os.path.getmtime)
