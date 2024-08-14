@@ -1,14 +1,4 @@
 from pathlib import Path
-from pyngrok import ngrok
-
-# Build path to web
-auth_token = '2kMyEotBfIixPcXvEx0ll1zeWu5_3wteHD4xu7sXytXEY8jY7'
-ngrok.set_auth_token(auth_token)
-ngrok.kill()
-ngstart = ngrok.connect(8000)
-ngrock_public_url = ngstart.public_url 
-print(ngstart)
-print(ngrock_public_url)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,7 +14,10 @@ SECRET_KEY = 'django-insecure-dv)fcd108n0$x&&n62@(fi&1psx5!elmb*nop^oap&=e!al0pj
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['http://*ngrock_public_url', localhost]
+ALLOWED_HOSTS = ['http://*ngrock_public_url', 'localhost']
+CSRF_TRUSTED_ORIGINS = [
+    'http://ngrock_public_url'
+]
 
 
 # Application definition
